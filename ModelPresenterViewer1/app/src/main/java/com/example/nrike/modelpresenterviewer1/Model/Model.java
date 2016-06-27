@@ -10,5 +10,11 @@ public class Model {
         int resp = a + b;
         return resp;
     }
+    
+    //Método para restar los valores
+     public int rest (int a, int b){
+        int resp = a - b;
+        return resp;
+    }
 
 }
