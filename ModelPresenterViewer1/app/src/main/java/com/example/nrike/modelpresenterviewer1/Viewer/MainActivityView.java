@@ -35,10 +35,19 @@ public class MainActivityView extends AppCompatActivity implements  MainActivity
         txtresult = (EditText) findViewById(R.id.txtresult);
         lb1 = (TextView) findViewById(R.id.lb1);
         lb2 = (TextView) findViewById(R.id.lb2);
-
         context = this;
-
         setTitle("Simple MVP");
+    }
+
+    public void resetNumbers(){
+
+        Random rand = new Random();
+
+        int n1 = rand.nextInt(10);
+        int n2 = rand.nextInt(10);
+
+        lb1.setText(String.valueOf(n1));
+        lb2.setText(String.valueOf(n2));
     }
 
     @Override
@@ -57,19 +66,11 @@ public class MainActivityView extends AppCompatActivity implements  MainActivity
 
                 presenter.check((MainActivityInterfice) context,a,b,result);
 
-                Random rand = new Random();
-
-                int n1 = rand.nextInt(10);
-                int n2 = rand.nextInt(10);
-                System.out.println(n1);
-
-                lb1.setText(String.valueOf(n1));
-                lb2.setText(String.valueOf(n2));
+                resetNumbers();
 
             }
         });
     }
-
 
     //Methods
     @Override
